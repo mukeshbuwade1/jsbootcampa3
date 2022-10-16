@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>guess number</title>
+</head>
+
+<body>
+    <input type="number" name="in" placeholder="guess number " , value="" id="in">
+    <p id="c"></p>
+    <button onclick="guess()">guess</button>
+    <button onclick="see()">wanna to see number</button>
+
+    <script>
+        var genrate_no = Math.floor(Math.random() * 10) + 1
+        function guess() {
+            var user_guessing = document.getElementById("in").value
+            console.log(genrate_no)
+            if (user_guessing == genrate_no){
+                alert("you guess the right number")
+                genrate_no = Math.floor(Math.random() * 10) + 1
+            }
+            else
+                alert("better luck next time")
+        }
+        function see(){
+            document.getElementById("c").innerHTML=`ganrated number is: ${genrate_no}`
+        }
+    </script>
+</body>
+
+</html>
